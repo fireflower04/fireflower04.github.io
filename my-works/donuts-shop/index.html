@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cana Bread & Salad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><!-- リセットをかけた方を先に読み込む -->
+<link rel="stylesheet" href="css/jquery.bxslider.css">
+
+</head>
+<body>
+<header id="sp-header">
+<h1>Cana<br> 
+Bread & Salad</h1>
+<nav id="g-nav">
+<ul>
+<li><a href="#about-page">ABOUT</a></li>
+<li><a href="#access-page">ACCESS</a></li>
+<li><a href="#"><img src="img/facebook.svg" alt=""></a></li>
+<li><a href="#"><img src="img/instagram.svg" alt=""></a></li>
+</ul>
+</nav>
+</header>
+
+<button id="ham-btn"><span></span></button>
+
+<div class="main-visual">
+    <ul class="bxslider"><!-- ulに名前をつけた -->
+        <li><img src="img/01.webp" alt=""></li>
+        <li><img src="img/02.webp" alt=""></li>
+        <li><img src="img/03.webp" alt=""></li>
+        <li><img src="img/04.webp" alt=""></li>
+      </ul>
+</div><!-- /.main-visual -->    
+
+<div class="sp-title">
+<p>Cana<br> 
+Bread & Salad</p>
+</div>
+
+<a href="#" class="cta-btn">オンラインショップ</a>
+
+<main>
+<div class="about section" id="about-page">
+<h2 data-en="ABOUT">私たちについて</h2>
+<h3>Lorem ipsum dolor <br>
+    sit amet consectetur <br>
+    adipisicing elit.</h3>
+<p>Lorem ipsum dolor sit amet <br>
+    consectetur adipisicing elit. <br>
+    Distinctio non dolorem assumenda!</p>
+</div><!-- /.about -->
+
+<div class="parallax">
+
+</div><!-- /.parallax -->
+<div class="access section" id="access-page">
+<h2 data-en="ACCESS">アクセス</h2>
+<h3>Cana <br>
+Bread & Salad</h3>
+<div class="map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25912.093170189426!2d139.6757866743164!3d35.72593210000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d6b8b0de7dd%3A0xd184e022fc8bf0e6!2z5qCq5byP5Lya56S-44OV44Kh44Km44Oz44OH44O844K344On44Oz44OV44Kn44Oq44KrVEE!5e0!3m2!1sja!2sjp!4v1721115744915!5m2!1sja!2sjp"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div><!-- /.map -->
+</div><!-- /.access -->
+</main>
+
+<footer>
+<p><small>&copy; <span id="this-year"></span> Cana Bread & Salad </small></p>
+</footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/jquery.bxslider.js"></script>
+<script>
+$(function(){
+//メインビジュアル
+$('.bxslider').bxSlider({
+mode: 'fade',
+auto: true,
+controls: false,
+pager: false,
+speed: 1000,
+pause: 3000,
+touchEnabled: false,//スマホで画面をスクロールできるようにするため、ここは無効にする
+});
+//西暦の取得
+//変数fullYearに西暦だけを代入
+const fullYear = new Date().getFullYear();
+console.log(fullYear);
+
+if(fullYear >= 2025){
+//2024-fullYear
+$('#this-year').text('2024 - '+fullYear);
+}else{
+$('#this-year').text(fullYear);
+}
+
+//ハンバーガーボタン
+//#ham-btnをon.clickしたら、#ham-btnに.clickをトグルして、かつ、#sp-headerに.slideをトグルする。
+$('#ham-btn').on('click', function(){
+$(this).toggleClass('click');
+$('#sp-header').toggleClass('slide');   
+});
+
+//#g-nav aをon.clickしたら、#sp-headerを画面の外にスライドし、かつ、#ham-btnも三本線に戻す
+$('#g-nav a').on('click', function(){
+$('#sp-header').removeClass('slide');
+$('#ham-btn').removeClass('click');
+});
+});
+//jsではなくjQueryで書くことによって命令が少し短くなっている
+
+</script>
+</body>
+</html>

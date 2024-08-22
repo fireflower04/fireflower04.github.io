@@ -1,0 +1,29 @@
+R6.7.9 
+
+制作物：３連ガチャ
+使用するJavaScriptの機能
+・for文
+・if文
+・配列
+・Math.random
+
+１．使用する画像のランクと名前を整理する
+ランクの配列名
+star3が2名、排出率5％ 01.ping, 02.png
+star2が3名、排出率35％ 03.ping, 04.png, 05.png
+star1が6名、排出率60％ 06.ping, 07.png, 08.ping, 09.png, 10.ping, 11.png
+
+２．使用する変数や配列を事前にまとめておく
+配列
+star3
+star2
+star1
+
+排出率
+star1Ratio = 60 ★１の排出率は60％
+star2Ratio = 95 ★１と★２の排出率を合わせた数字
+
+各ランクに入っているキャラ数
+star1Total = 6
+star2Total = 3
+star3Total = 2
