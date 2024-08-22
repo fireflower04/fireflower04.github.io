@@ -1,0 +1,204 @@
+@charset "utf-8";
+
+/* 変数の登録 */
+:root{
+--color:#bde2fb;
+--color2:#fd064c;
+--font:"Potta One", system-ui;
+}
+
+/* スムーススクロール */
+html{
+scroll-behavior: smooth;/* 目的の位置に行くまで飛んでいくようなアニメーション。見る人がどこにいるか分かりやすくするため */
+}
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+ul{
+list-style: none;
+}
+a{
+text-decoration: none;
+}
+img{
+vertical-align:bottom;
+max-width: 100%;
+}
+body{
+font-family: sans-serif;/* かざりのない */
+}
+
+/* pcレイアウト */
+header{
+width: 100%;
+height: 100px;
+padding: 0 50px;
+background-color: #ffffff63;
+-webkit-backdrop-filter: blur(20px);/* safari対応ベンダーフレックス付きが上 */
+backdrop-filter: blur(20px);
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: fixed;
+top: 0;
+left: 0;
+z-index: calc(infinity);/* 自動的に一番上に重なる */
+font-family: var(--font);
+}
+.header-inner>a{
+color: #111;
+}
+.g-nav>ul{
+display: flex;/* ボタンを横に並べる */
+gap: 0 30px;
+}
+.g-nav a{
+color: black;
+padding: 20px 20px;/* ボタンが押しやすいように大きくする */
+}
+.g-nav a:hover{
+text-decoration: underline 3px var(--color2);
+text-underline-offset: 8px;/* アンダーラインと文字の間隔をあける */
+}
+.wrapper{
+display: flex;
+flex-direction: row;
+}
+.main-visual{
+width: 50%;/* 親要素の5割 */
+height: 100vh;/* 一画面分 */
+position: sticky;/* 親要素の中で固定 */
+left: 0;
+top: 0;
+}
+.main-visual>img{
+object-fit: cover;
+object-position: center center;
+width: 100%;
+height: 100%;/* 親要素のサイズにぴったり合わせる */
+}
+
+main{
+width: 50%;
+padding: 0 20px;
+}
+
+.city{
+margin: 200px 0;
+scroll-margin-top: 140px;/* 本来止まる位置より上に止まるように指定 */
+}
+
+.city>h2{
+margin-bottom: 20px;
+border-left: 20px solid var(--color2);
+border-bottom: 1px solid var(--color2);
+padding: 2px 24px;
+font-family: var(--font);
+}
+
+.city-main-img{
+aspect-ratio: 2/1;
+margin-bottom: 40px;
+}
+.city-main-img>img{
+object-fit: cover;/* 常に同じ３セット */
+object-position: center 60%;
+width: 100%;
+height: 100%;
+}
+
+.city>p{
+line-height: 1.8;
+margin-bottom: 40px;
+}
+
+.gallery{
+display: flex;
+flex-wrap: wrap;
+gap: 40px;
+}
+
+.thumb{
+width: calc((100% - 40px) / 2);
+aspect-ratio: 1/1;/* 正方形の写真 */
+}
+
+.thumb>img{
+object-fit: cover;
+width: 100%;
+height: 100%;
+}
+
+.map{
+width: 100%;
+aspect-ratio: 16/9;/* テレビの画面比 */
+}
+
+.map>iframe{
+width: 100%;
+height: 100%;
+}
+footer{
+height: 400px;
+background-color: var(--color);
+}
+
+/* 960px以下 */
+@media (max-width:960px){
+header{
+padding: 0 20px;
+}
+}
+
+/* 767px以下 */
+@media (max-width:767px){
+header{
+height: auto;/* 中身次第で高さを決めたい場合 */
+display:block/* ディスプレイフレックスを止めたい、横並びをやめたいとき */
+}
+h1{
+font-size: 22px;
+text-align: center;
+margin-bottom: 10px;
+}
+.tag-line{
+font-size: 14px;
+text-align: center;
+margin-bottom: 10px;
+}
+.g-nav>ul{
+gap: 0 16px;
+justify-content: center;
+border-top: 1px solid #111;
+}
+.g-nav a{
+display: block;
+padding: 10px 15px;
+}
+
+
+
+.wrapper{
+display: block;
+}
+.main-visual{
+width: 100%;
+position: static;/* mainのデータがメインビジュアルの下に重なっている状態から、ふつうの状態に戻す */
+}
+main{
+width: 100%;
+}
+.city>h2{
+font-size: 22px;
+margin-left: 0;
+}
+.gallery{
+gap: 20px;
+}
+.thumb{
+width: calc((100% - 20px) / 2);
+}
+}
