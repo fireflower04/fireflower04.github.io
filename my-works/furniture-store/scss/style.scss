@@ -9,6 +9,7 @@ $color_4: #738b75; //main-text2とcol-3-text2
 $color_5: #67807e; //main-text3とcol-3-text3
 $color_6: #444;
 $font_en: "Roboto Mono", monospace;
+$font_ja:"Klee One", cursive;
 
 $point_1: 640px;
 $point_2: 900px;
@@ -33,7 +34,6 @@ $point_2: 900px;
 }
 
 body {
-    font-family: $font_en;
     color: $color_6;
     font-size: rem(16); //pxは不要
 }
@@ -52,9 +52,11 @@ header {
     padding: 0 15px;
     position: fixed;
     z-index: calc(infinity);
+font-family: var($font_en);
 
     >h1 {
         font-size: clamp(1.875rem, 1.591rem + 1.21vw, 2.5rem); //30～40pxの間でフルード
+
     }
 
     @include pc() {
@@ -131,6 +133,7 @@ header {
 //pc用ナビゲーション
 #g-nav {
     display: none;
+font-family: var($font_en);
 
     @include pc() {
         display: block;
@@ -194,6 +197,7 @@ body.scroll #sub-title {
     top: 60px;
     left: 0;
     padding: 40px;
+font-family: var($font_en);
 
     li {
         margin-bottom: 14px;
@@ -250,6 +254,10 @@ main {
 }
 
 //メインコンテンツ
+.main-contents{
+font-family: var($font_en);
+}
+
 .contents-wrapper {
     display: flex;
     justify-content: space-between;
@@ -279,8 +287,14 @@ main {
             display: flex;
             flex-direction: column;
             justify-content: center;
+
         }
     }
+}
+
+.main-text>p{
+font-family: "Klee One", cursive;
+line-height: 3;
 }
 
 .main-img {
@@ -301,15 +315,16 @@ main {
     padding: 30px 20px;
     margin-bottom: 10px;
 
-    >h2 {
-        font-size: rem(23);
-        margin-bottom: 20px;
-    }
+>h2 {
+font-size: rem(23);
+margin-bottom: 20px;
+}
 
-    >p {
-        line-height: 1.75;
-        margin-bottom: 20px;
-    }
+>p{
+line-height: 1.75;
+margin-bottom: 20px;
+font-size:rem(20);
+}
 }
 
 //col-1部分
@@ -319,22 +334,26 @@ main {
     text-align: center;
     margin-bottom: 10px;
 
-    >h2 {
-        font-size: rem(25);
-        margin-bottom: 20px;
-    }
 
-    >p {
-        line-height: 1.8;
-        max-width: 640px;
-        margin: 0 auto;
-    }
+>h2 {
+font-size: rem(20);
+margin-bottom: 20px;
+font-family: "Klee One", cursive;
+}
+
+>p{
+font-size:rem(15);
+line-height: 1.8;
+max-width: 640px;
+margin: 0 auto;
+font-family: "Klee One", cursive;
+}
 
     @include tablet() {
         padding: 50px 20px;
 
         >h2 {
-            font-size: rem(25);
+font-size: rem(25);
         }
     }
 
@@ -344,8 +363,12 @@ main {
         >h2 {
             margin-bottom: 40px;
             line-height: 1.75;
-        }
-    }
+font-size: rem(28);
+}
+>p{
+font-size:rem(20);
+}
+}
 }
 
 //col-3
@@ -353,6 +376,7 @@ main {
     @include pc() {
         display: flex;
         justify-content: space-between;
+font-family: var($font_en);
     }
 }
 
