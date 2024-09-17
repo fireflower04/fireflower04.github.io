@@ -51,5 +51,18 @@ $('#this-year').text('2024 -'+fullYear);
 $('#this-year').text(fullYear);
 }
 
+//多言語化にともなうリダイレクト
+$('#btn-ja').on('click', function(){
+$(this).href = 'https://fireflower04.github.io/restaurant-site-multi/';
 });
+$('#btn-it').on('click', function(){
+$(this).href = 'https://fireflower04-github-io.translate.goog/restaurant-site-multi/?_x_tr_sl=ja&_x_tr_tl=it&_x_tr_hl=ja';
+});
+$('#btn-en').on('click', function(){
+$(this).href = 'https://fireflower04-github-io.translate.goog/restaurant-site-multi/?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=ja';
+});
+
+});
+
+
 
