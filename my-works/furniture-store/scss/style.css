@@ -232,7 +232,6 @@ img {
 }
 
 body {
-  font-family: "Roboto Mono", monospace;
   color: #444;
   font-size: 1rem;
 }
@@ -247,6 +246,7 @@ header {
   padding: 0 15px;
   position: fixed;
   z-index: calc(infinity);
+  font-family: var("Roboto Mono", monospace);
 }
 header > h1 {
   font-size: clamp(1.875rem, 1.591rem + 1.21vw, 2.5rem);
@@ -317,6 +317,7 @@ header > h1 {
 
 #g-nav {
   display: none;
+  font-family: var("Roboto Mono", monospace);
 }
 @media (min-width: 900px) {
   #g-nav {
@@ -376,6 +377,7 @@ body.scroll #sub-title {
   top: 60px;
   left: 0;
   padding: 40px;
+  font-family: var("Roboto Mono", monospace);
 }
 #sp-nav li {
   margin-bottom: 14px;
@@ -428,6 +430,10 @@ main {
   }
 }
 
+.main-contents {
+  font-family: var("Roboto Mono", monospace);
+}
+
 .contents-wrapper {
   display: flex;
   justify-content: space-between;
@@ -455,6 +461,11 @@ main {
     flex-direction: column;
     justify-content: center;
   }
+}
+
+.main-text p {
+  font-family: var("Klee One", cursive);
+  line-height: 2;
 }
 
 .main-img {
@@ -489,12 +500,14 @@ main {
   padding: 20px;
   text-align: center;
   margin-bottom: 10px;
+  font-family: var("Klee One", cursive);
 }
 .col-1 > h2 {
   font-size: 1.5625rem;
   margin-bottom: 20px;
 }
 .col-1 > p {
+  font-size: 1.25rem;
   line-height: 1.8;
   max-width: 640px;
   margin: 0 auto;
@@ -521,6 +534,7 @@ main {
   .col-3-wrapper {
     display: flex;
     justify-content: space-between;
+    font-family: var("Roboto Mono", monospace);
   }
 }
 
