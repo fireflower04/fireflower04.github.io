@@ -26,17 +26,17 @@ padding: 0 200px 0 0;
 display:flex;
 align-items: center;
 position: relative;
+@media (max-width:1280px){
+padding: none;
+}
 }
 
 .logo{
 width: 13%;
 aspect-ratio: 1/1;
 margin-left: 50px;
-@media (max-width:1280px){
-
-}
 @media (max-width:640px){
-width: 25%;
+width: 20%;
 margin-left: 20px;
 }
 }
@@ -52,6 +52,7 @@ position: absolute;
 top: 80px;
 left: 280px;
 @media (max-width:640px){
+left: 110px;
 font-size: 20px;
 }
 }
@@ -74,7 +75,6 @@ width: 25%;
 display: none;
 }
 }
-
 #g-nav a{
 display: block;
 line-height: 50px;
@@ -86,7 +86,36 @@ font-size: 30px;
 text-decoration: underline;
 }
 }
-
+/* sp用ナビゲーション */
+#sp-nav{
+display: none;
+@media (max-width:640px){
+display: block;
+translate: 100% 0;
+width: 100%;
+height: calc(100vh - 60px);
+background-color:var(--bg-color);
+position: fixed;
+z-index: 10;
+top: 60px;
+left: 0;
+padding: 40px;
+font-family: var(--font-en);
+li{
+margin-bottom: 14px;
+>a{
+color: var(--text-color);
+display: block;
+border-bottom: 1px solid var(--text-color);
+padding: 5px 10px;
+}
+}
+&.slide{
+translate: 0;
+transition: 0.2s;
+}
+}
+}
 
 /* ハンバーガーボタン */
 #ham-btn {

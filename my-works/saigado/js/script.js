@@ -26,4 +26,4 @@ $('#ham-btn').on('click', function () {
     $(this).toggleClass('is-active');
     //$('#sp-nav').toggleClass('slide');
 });
-SPnavは未作成
+
