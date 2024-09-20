@@ -92,8 +92,6 @@ text-decoration: underline;
 }
 /* sp用ナビゲーション */
 #sp-nav{
-display: none;
-@media (max-width:640px){
 display: block;
 translate: 100% 0;
 width: 100%;
@@ -118,7 +116,7 @@ padding: 5px 10px;
 translate: 0;
 transition: 0.2s;
 }
-}
+
 }
 
 /* ハンバーガーボタン */
