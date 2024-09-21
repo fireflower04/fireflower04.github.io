@@ -21,9 +21,13 @@ $('#this-year').text(fullYear);
 }
 
 //ハンバーガーボタン
+//まず＃sp-navを非表示にする
+//$('#sp-nav').hide();
+
+//ハンバーガーメニュー
 //#ham-btnをon.clickしたら
 $('#ham-btn').on('click', function () {
     $(this).toggleClass('is-active');
-    //$('#sp-nav').toggleClass('slide');
+    $('#sp-nav').toggleClass('slide');
 });
 
