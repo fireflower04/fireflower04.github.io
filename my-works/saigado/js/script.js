@@ -24,6 +24,6 @@ $('#this-year').text(fullYear);
 //#ham-btnをon.clickしたら
 $('#ham-btn').on('click', function () {
     $(this).toggleClass('is-active');
-    //$('#sp-nav').toggleClass('slide');
+    $('#sp-nav').toggleClass('slide');
 });
 
